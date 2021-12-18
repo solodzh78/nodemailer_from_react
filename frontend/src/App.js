@@ -11,7 +11,7 @@ function App() {
     e.preventDefault();
     setSending("Отправка......");
     try {
-      const res = await axios.post('http://localhost:3000/mail/send', {        
+      const res = await axios.post('https://nodemailer-react-238.herokuapp.com/mail/send', {        
         email: form["email"],
         subject: form["subject"],
         text: form["message"]
