@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+app.use(express.static(path.resolve(__dirname, "./frontend/build")));
 app.use(express.json({ extended: true }));
 
 app.post('/mail/send', async (req, res) => {
